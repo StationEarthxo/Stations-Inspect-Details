@@ -128,7 +128,7 @@ public class SpinningItemsPlugin extends Plugin
         SpinCategory category = composition == null
             ? SpinCategory.OTHER
             : classify(composition.getInventoryActions(), composition.getName());
-        if (composition == null || !isEnabled(category))
+        if (composition == null || isNoted(composition.getNote()) || !isEnabled(category))
         {
             clearActiveSlot();
             return;
@@ -307,6 +307,11 @@ public class SpinningItemsPlugin extends Plugin
             return SpinCategory.TOOLS;
         }
         return SpinCategory.OTHER;
+    }
+
+    static boolean isNoted(int noteTemplateId)
+    {
+        return noteTemplateId != -1;
     }
 
     private static boolean hasAction(String[] actions, String... expected)

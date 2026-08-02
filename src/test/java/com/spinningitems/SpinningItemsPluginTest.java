@@ -53,4 +53,11 @@ public class SpinningItemsPluginTest
         Assert.assertEquals(SpinCategory.OTHER,
             SpinningItemsPlugin.classify(new String[]{"Use", null, null}, "Coins"));
     }
+
+    @Test
+    public void onlyNotedItemTemplatesAreExcludedFromSpinning()
+    {
+        Assert.assertFalse(SpinningItemsPlugin.isNoted(-1));
+        Assert.assertTrue(SpinningItemsPlugin.isNoted(799));
+    }
 }

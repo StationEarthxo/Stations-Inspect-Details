@@ -3,6 +3,7 @@
 A tiny cosmetic RuneLite plugin that rotates the native 3D-derived inventory
 sprite while the mouse is hovering over an item. Only the exact hovered slot is
 animated, even when the inventory contains duplicate items.
+Noted item sprites remain still.
 
 Choose which categories spin: food, potions and drinks, armour and clothing,
 weapons, tools, or other items. It does not alter clicks, menus, dragging,
